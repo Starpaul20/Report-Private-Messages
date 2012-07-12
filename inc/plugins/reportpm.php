@@ -826,16 +826,32 @@ function reportpm_datacache_class()
 {
 	global $cache;
 
-	class MyDatacache extends datacache
+	if(class_exists('MyDatacache'))
 	{
-		function update_reportedpms()
+		class ReportDatacache extends MyDatacache
 		{
-			update_reportedpms();
+			function update_reportedpms()
+			{
+				update_reportedpms();
+			}
 		}
-	}
 
-	$cache = null;
-	$cache = new MyDatacache;
+		$cache = null;
+		$cache = new ReportDatacache;
+	}
+	else
+	{
+		class MyDatacache extends datacache
+		{
+			function update_reportedpms()
+			{
+				update_reportedpms();
+			}
+		}
+
+		$cache = null;
+		$cache = new MyDatacache;
+	}
 }
 
 /**
