@@ -1,0 +1,13 @@
+1.2
+- Added Select all reported PMs checkbox
+- Bug: Fixed fatal error on the cache page
+
+1.1
+- Updated plugin with 1.6.5 plugin system updates
+- Added rebuild reportedpm cache option
+- Added online location support
+- Added user merging and deletion support
+- Optimization and general plugin updating
+
+1.0
+- Initial release
