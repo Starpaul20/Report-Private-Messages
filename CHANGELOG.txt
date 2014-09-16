@@ -4,16 +4,16 @@
 
 ## Version number reset for MyBB 1.8 ##
 
-1.2
+1.2 (July 18th, 2012)
 - Added Select all reported PMs checkbox
 - Bug: Fixed fatal error on the cache page
 
-1.1
+1.1 (November 26th, 2011)
 - Updated plugin with 1.6.5 plugin system updates
 - Added rebuild reportedpm cache option
 - Added online location support
 - Added user merging and deletion support
 - Optimization and general plugin updating
 
-1.0
+1.0 (March 3rd, 2011)
 - Initial release
