@@ -226,7 +226,7 @@ function reportpm_view()
 		// Make sure we are looking at a real pm report here.
 		if(!$report || $report['type'] != 'privatemessage')
 		{
-			error($lang->error_nomember);
+			error($lang->error_badreport);
 		}
 
 		$report['touser'] = htmlspecialchars_uni($report['to_username']);
@@ -267,18 +267,12 @@ function reportpm_pmdelete()
 	$lang->load("reportpm");
 
 	// Prevent this PM from being deleted if it has an unread report
-	$query = $db->simple_select("reportedpms", "pmid, reportstatus", "pmid='".intval($mybb->input['pmid'])."'");
+	$query = $db->simple_select('reportedcontent', 'id', "reportstatus='0' AND type = 'privatemessage'");
 	$report = $db->fetch_array($query);
-	if($report['pmid'])
+
+	if($report['id'] == (int)$mybb->input['pmid'])
 	{
-		if($report['reportstatus'] == 0)
-		{
-			error($lang->error_pmreport_unread);
-		}
-		else
-		{
-			$db->delete_query("reportedpms", "pmid='".intval($mybb->input['pmid'])."'");
-		}
+		error($lang->error_pmreport_unread);
 	}
 }
 
@@ -303,17 +297,13 @@ function reportpm_massdelete()
 			}
 
 			// Prevent any PMs from being deleted if it has an unread report
-			$query = $db->simple_select("reportedpms", "pmid, reportstatus", "pmid IN ($pmssql)");
+			$query = $db->simple_select("reportedcontent", "id, reportstatus", "id IN ($pmssql) AND type = 'privatemessage'");
 			$report = $db->fetch_array($query);
-			if($report['pmid'])
+			if($report['id'])
 			{
 				if($report['reportstatus'] == 0)
 				{
 					error($lang->error_pmreport_unread_multi);
-				}
-				else
-				{
-					$db->delete_query("reportedpms", "pmid IN ($pmssql)");
 				}
 			}
 		}
