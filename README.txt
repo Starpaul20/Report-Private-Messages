@@ -7,7 +7,7 @@ License: GPL
 
 Allows users to report private messages to Administrators and Super Moderators if they are spam/abuse etc.
 
-This system works in the same way as reported posts does, with a notice in the header and a list of reported PMs in the Mod CP (can only be seen by Administrators and Super Moderators) with the ability to mark reports as read.
+This system integrates with the MyBB report center (PM reports can only be seen by Administrators and Super Moderators).
 
 This plugin offers full language support.
 
