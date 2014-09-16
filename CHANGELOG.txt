@@ -1,3 +1,9 @@
+1.0 (September 16th, 2014)
+- Updated plugin to work with MyBB 1.8
+- Merged with report center
+
+## Version number reset for MyBB 1.8 ##
+
 1.2
 - Added Select all reported PMs checkbox
 - Bug: Fixed fatal error on the cache page

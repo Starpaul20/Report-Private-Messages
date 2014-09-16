@@ -1,6 +1,6 @@
 ## INFORMATION ##
 
-Report Private Messages (1.2) for MyBB 1.6
+Report Private Messages (1.0) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2011
 License: GPL
@@ -11,12 +11,14 @@ This system works in the same way as reported posts does, with a notice in the h
 
 This plugin offers full language support.
 
+The 'oldrelease' branch contains the 1.6 version of the plugin.
+
 
 ## INSTALLATION ##
 
 1. Upload all files above, keeping the file structure intact.
 2. Go to Configuration > Plugins
-3. Click "Install & Activate"
+3. Click "Activate"
 4. Enjoy!
 
 
