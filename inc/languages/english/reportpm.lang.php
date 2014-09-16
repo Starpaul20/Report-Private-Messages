@@ -7,7 +7,14 @@
 $l['reportpm_info_name'] = "Report Private Messages";
 $l['reportpm_info_desc'] = "Allows users to report Private Messages if they are spam/abuse etc.";
 
-$l['report_info_pm'] = "<a href=\"{1}\">Private Message</a> from {2}";
+$l['report_info_pm'] = "<a href=\"javascript:;\" onclick=\"{1}\">Private Message</a> from {2}";
 $l['postbit_report_pm'] = "Report this private message to a moderator";
+
+$l['view_reported_pm'] = "View Reported Private Message";
+$l['subject'] = "Subject:";
+$l['from_user'] = "From User:";
+$l['to_user'] = "To User:";
+$l['date_sent'] = "Date Sent:";
+$l['ip_address'] = "IP Address:";
 
 ?>
