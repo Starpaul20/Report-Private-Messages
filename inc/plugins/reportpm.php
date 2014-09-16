@@ -48,9 +48,12 @@ $plugins->add_hook("admin_tools_cache_rebuild", "reportpm_datacache_class");
 // The information that shows up on the plugin manager
 function reportpm_info()
 {
+	global $lang;
+	$lang->load("reportpm", true);
+
 	return array(
-		"name"				=> "Report PMs",
-		"description"		=> "Allows users to report Private Messages if they are spam/abuse etc.",
+		"name"				=> $lang->reportpm_info_name,
+		"description"		=> $lang->reportpm_info_desc,
 		"website"			=> "http://galaxiesrealm.com/index.php",
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",

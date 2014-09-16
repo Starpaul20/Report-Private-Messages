@@ -4,6 +4,9 @@
  * Copyright 2011 Starpaul20
  */
 
+$l['reportpm_info_name'] = "Report Private Messages";
+$l['reportpm_info_desc'] = "Allows users to report Private Messages if they are spam/abuse etc.";
+
 $l['reported_pms'] = "Reported Private Messages";
 $l['nav_modcp'] = "Mod CP";
 $l['mcp_nav_reported_pms'] = "Reported PMs";
