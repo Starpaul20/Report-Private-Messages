@@ -134,7 +134,7 @@ function reportpm_report()
 
 	if($report_type == 'privatemessage')
 	{
-		$query = $db->simple_select("privatemessages", "*", "pmid = '".$mybb->get_input('pid', 1)."'");
+		$query = $db->simple_select("privatemessages", "*", "pmid = '".$mybb->get_input('pid', MyBB::INPUT_INT)."'");
 
 		if(!$db->num_rows($query))
 		{
@@ -160,7 +160,7 @@ function reportpm_postbit($post)
 	global $db, $mybb, $templates, $lang;
 	$lang->load("reportpm");
 
-	$pmid = intval($mybb->input['pmid']);
+	$pmid = $mybb->get_input('pmid', MyBB::INPUT_INT);
 
 	$query = $db->simple_select("privatemessages", "folder", "pmid='{$pmid}'");
 	$folder = $db->fetch_array($query);
@@ -212,7 +212,7 @@ function reportpm_view()
 			error_no_permission();
 		}
 
-		$rid = $mybb->get_input('rid', 1);
+		$rid = $mybb->get_input('rid', MyBB::INPUT_INT);
 
 		$query = $db->query("
 			SELECT pm.*, r.type, t.username AS to_username, u.username AS from_username
@@ -283,9 +283,10 @@ function reportpm_massdelete()
 	global $db, $mybb, $lang;
 	$lang->load("reportpm");
 
-	if($mybb->input['delete'])
+	if($mybb->get_input('delete'))
 	{
-		if(is_array($mybb->input['check']))
+		$mybb->input['check'] = $mybb->get_input('check', MyBB::INPUT_ARRAY);
+		if(!empty($mybb->input['check']))
 		{
 			$pmssql = '';
 			foreach($mybb->input['check'] as $key => $val)
@@ -294,7 +295,7 @@ function reportpm_massdelete()
 				{
 					$pmssql .= ",";
 				}
-				$pmssql .= "'".intval($key)."'";
+				$pmssql .= "'".(int)$key."'";
 			}
 
 			// Prevent any PMs from being deleted if it has an unread report
