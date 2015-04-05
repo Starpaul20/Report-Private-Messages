@@ -1,3 +1,9 @@
+1.0.1 (April 5th, 2015)
+- Using get_input instead of intval input
+- Use relative time when viewing PM in Mod CP
+- Changed delete check query
+- Removed useless data in query
+
 1.0 (September 16th, 2014)
 - Updated plugin to work with MyBB 1.8
 - Merged with report center
