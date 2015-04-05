@@ -233,7 +233,7 @@ function reportpm_view()
 		$report['touser'] = htmlspecialchars_uni($report['to_username']);
 		$report['fromuser'] = htmlspecialchars_uni($report['from_username']);
 		$report['subject'] = htmlspecialchars_uni($report['subject']);
-		$report['dateline'] = my_date($mybb->settings['dateformat'], $report['dateline']).", ".my_date($mybb->settings['timeformat'], $report['dateline']);
+		$report['dateline'] = my_date('relative', $report['dateline']);
 
 		if(empty($report['ipaddress']))
 		{
