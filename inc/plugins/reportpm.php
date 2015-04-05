@@ -268,10 +268,11 @@ function reportpm_pmdelete()
 	$lang->load("reportpm");
 
 	// Prevent this PM from being deleted if it has an unread report
-	$query = $db->simple_select('reportedcontent', 'id', "reportstatus='0' AND type = 'privatemessage'");
-	$report = $db->fetch_array($query);
+	$pmid = $mybb->get_input('pmid', MyBB::INPUT_INT);
+	$query = $db->simple_select('reportedcontent', 'id', "reportstatus='0' AND type = 'privatemessage' AND id = '{$pmid}'");
+	$unreadreport = $db->fetch_field($query, "id");
 
-	if($report['id'] == (int)$mybb->input['pmid'])
+	if($unreadreport)
 	{
 		error($lang->error_pmreport_unread);
 	}
