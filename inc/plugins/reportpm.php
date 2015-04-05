@@ -182,7 +182,7 @@ function reportpm_modcp()
 	if($report['type'] == 'privatemessage')
 	{
 		$query = $db->query("
-			SELECT pm.pmid, pm.fromid, u.username, pm.subject
+			SELECT pm.pmid, pm.fromid, u.username
 			FROM ".TABLE_PREFIX."privatemessages pm
 			LEFT JOIN ".TABLE_PREFIX."users u ON (pm.fromid = u.uid)
 			WHERE pm.pmid='{$report['id']}'
