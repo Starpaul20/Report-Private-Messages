@@ -190,6 +190,7 @@ function reportpm_modcp()
 		while($pm = $db->fetch_array($query))
 		{
 			$pmview = "MyBB.popupWindow('/modcp.php?action=viewpm&amp;rid={$report['rid']}');";
+			$pm['username'] = htmlspecialchars_uni($pm['username']);
 			$user = build_profile_link($pm['username'], $pm['fromid']);
 			$report_data['content'] = $lang->sprintf($lang->report_info_pm, $pmview, $user);
 		}
