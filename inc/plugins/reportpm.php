@@ -39,6 +39,9 @@ $plugins->add_hook("modcp_allreports_report", "reportpm_modcp");
 $plugins->add_hook("modcp_start", "reportpm_view");
 $plugins->add_hook("private_delete_start", "reportpm_pmdelete");
 $plugins->add_hook("private_do_stuff", "reportpm_massdelete");
+$plugins->add_hook("report_content_types", "reportpm_type");
+
+$plugins->add_hook("admin_config_report_reasons_begin", "reportpm_reason_lang");
 
 // The information that shows up on the plugin manager
 function reportpm_info()
@@ -312,6 +315,21 @@ function reportpm_massdelete()
 			}
 		}
 	}
+}
+
+// Add PM to report reason types
+function reportpm_type($types)
+{
+	$types[] .= "privatemessage";
+
+	return $types;
+}
+
+// Language for Admin CP report reasons page
+function reportpm_reason_lang()
+{
+	global $lang;
+	$lang->load("reportpm", true);
 }
 
 ?>

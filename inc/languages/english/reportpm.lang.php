@@ -7,6 +7,8 @@
 $l['reportpm_info_name'] = "Report Private Messages";
 $l['reportpm_info_desc'] = "Allows users to report Private Messages if they are spam/abuse etc.";
 
+$l['report_content_privatemessage'] = "Private Message";
+
 $l['report_info_pm'] = "<a href=\"javascript:;\" onclick=\"{1}\">Private Message</a> from {2}";
 $l['postbit_report_pm'] = "Report this private message to a moderator";
 
