@@ -79,36 +79,36 @@ function reportpm_activate()
 	$insert_array = array(
 		'title'		=> 'modcp_viewpm',
 		'template'	=> $db->escape_string('<div class="modal">
-<div style="overflow-y: auto; max-height: 400px;">
-<table width="100%" cellspacing="{$theme[\'borderwidth\']}" cellpadding="{$theme[\'tablespace\']}" border="0" align="center" class="tborder">
-<tr>
-<td colspan="2" class="thead"><strong>{$lang->view_reported_pm}</strong></td>
-</tr>
-<tr>
-<td class="trow1"><strong>{$lang->subject}</strong></td>
-<td class="trow1">{$report[\'subject\']}</td>
-</tr>
-<tr>
-<td class="trow2"><strong>{$lang->from_user}</strong></td>
-<td class="trow2">{$report[\'fromuser\']}</td>
-</tr>
-<tr>
-<td class="trow1"><strong>{$lang->to_user}</strong></td>
-<td class="trow1">{$report[\'touser\']}</td>
-</tr>
-<tr>
-<td class="trow2"><strong>{$lang->date_sent}</strong></td>
-<td class="trow2">{$report[\'dateline\']}</td>
-</tr>
-<tr>
-<td class="trow1"><strong>{$lang->ip_address}</strong></td>
-<td class="trow1">{$ipaddress}</td>
-</tr>
-<tr>
-<td colspan="2" class="trow2">{$report[\'message\']}</td>
-</tr>
-</table>
-</div>
+	<div style="overflow-y: auto; max-height: 400px;">
+		<table width="100%" cellspacing="{$theme[\'borderwidth\']}" cellpadding="{$theme[\'tablespace\']}" border="0" align="center" class="tborder">
+			<tr>
+				<td colspan="2" class="thead"><strong>{$lang->view_reported_pm}</strong></td>
+			</tr>
+			<tr>
+				<td class="trow1"><strong>{$lang->subject}</strong></td>
+				<td class="trow1">{$report[\'subject\']}</td>
+			</tr>
+			<tr>
+				<td class="trow2"><strong>{$lang->from_user}</strong></td>
+				<td class="trow2">{$report[\'fromuser\']}</td>
+			</tr>
+			<tr>
+				<td class="trow1"><strong>{$lang->to_user}</strong></td>
+				<td class="trow1">{$report[\'touser\']}</td>
+			</tr>
+			<tr>
+				<td class="trow2"><strong>{$lang->date_sent}</strong></td>
+				<td class="trow2">{$report[\'dateline\']}</td>
+			</tr>
+			<tr>
+				<td class="trow1"><strong>{$lang->ip_address}</strong></td>
+				<td class="trow1">{$ipaddress}</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="trow2">{$report[\'message\']}</td>
+			</tr>
+		</table>
+	</div>
 </div>'),
 		'sid'		=> '-1',
 		'version'	=> '',
