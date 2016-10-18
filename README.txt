@@ -1,13 +1,13 @@
 ## INFORMATION ##
 
-Report Private Messages (1.0.1) for MyBB 1.8
+Report Private Messages (1.1) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2011
 License: GPL
 
 Allows users to report private messages to Administrators and Super Moderators if they are spam/abuse etc.
 
-This system integrates with the MyBB report center (PM reports can only be seen by Administrators and Super Moderators).
+This system integrates with the MyBB report center (PM reports can only be seen by Administrators and Super Moderators). Also integrates with report reasons.
 
 This plugin offers full language support.
 
