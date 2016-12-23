@@ -69,7 +69,7 @@ function reportpm_activate()
 	// Insert templates
 	$insert_array = array(
 		'title'		=> 'postbit_report_pm',
-		'template'	=> $db->escape_string('<a href="javascript:;" onclick="MyBB.popupWindow(\'/report.php?modal=1&amp;type=privatemessage&amp;pid={$pmid}\');" title="{$lang->postbit_report_pm}" class="postbit_report"><span>{$lang->postbit_button_report}</span></a>'),
+		'template'	=> $db->escape_string('<a href="javascript:void(0)" onclick="MyBB.popupWindow(\'/report.php?modal=1&amp;type=privatemessage&amp;pid={$pmid}\'); return false;" title="{$lang->postbit_report_pm}" class="postbit_report"><span>{$lang->postbit_button_report}</span></a>'),
 		'sid'		=> '-1',
 		'version'	=> '',
 		'dateline'	=> TIME_NOW
