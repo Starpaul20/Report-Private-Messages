@@ -64,7 +64,7 @@ function reportpm_info()
 // This function runs when the plugin is activated.
 function reportpm_activate()
 {
-	global $db;
+	global $db, $cache;
 
 	// Insert templates
 	$insert_array = array(
@@ -118,17 +118,21 @@ function reportpm_activate()
 
 	include MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("private_read", "#".preg_quote('{$headerinclude}')."#i", '{$headerinclude}<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1804"></script>');
+
+	$cache->update_reportreasons();
 }
 
 // This function runs when the plugin is deactivated.
 function reportpm_deactivate()
 {
-	global $db;
+	global $db, $cache;
 	$db->delete_query("templates", "title IN('postbit_report_pm','modcp_viewpm')");
 
 	include MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("private_read", "#".preg_quote('<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1804"></script>')."#i", '', 0);
 	find_replace_templatesets("private_read", "#".preg_quote('<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1800"></script>')."#i", '', 0); // Included just in case
+
+	$cache->update_reportreasons();
 }
 
 // Report the PM
