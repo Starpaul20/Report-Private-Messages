@@ -336,5 +336,3 @@ function reportpm_reason_lang()
 	global $lang;
 	$lang->load("reportpm", true);
 }
-
-?>
