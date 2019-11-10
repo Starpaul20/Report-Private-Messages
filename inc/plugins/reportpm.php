@@ -139,7 +139,7 @@ function reportpm_deactivate()
 // Report the PM
 function reportpm_report()
 {
-	global $db, $mybb, $report_type, $error, $verified, $report_type_db, $id, $id2, $id3;
+	global $db, $mybb, $report_type, $error, $verified, $report_type_db, $id, $id2, $id3, $checkid;
 
 	if($report_type == 'privatemessage')
 	{
@@ -155,7 +155,7 @@ function reportpm_report()
 			$pm = $db->fetch_array($query);
 
 			$id = $pm['pmid']; // id is the pm id
-			$id2 = $pm['fromid']; // id2 is the user who sent the message
+			$id2 = $checkid = $pm['fromid']; // id2 is the user who sent the message
 			$id3 = $pm['uid']; // id3 is the user who received the message
 
 			$report_type_db = "type = 'privatemessage'";
