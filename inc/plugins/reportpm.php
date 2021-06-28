@@ -119,7 +119,7 @@ function reportpm_activate()
 	);
 	$db->insert_query("templates", $insert_array);
 
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("private_read", "#".preg_quote('{$headerinclude}')."#i", '{$headerinclude}<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1820"></script>');
 
 	$cache->update_reportreasons();
@@ -131,7 +131,7 @@ function reportpm_deactivate()
 	global $db, $cache;
 	$db->delete_query("templates", "title IN('postbit_report_pm','modcp_viewpm')");
 
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("private_read", "#".preg_quote('<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1820"></script>')."#i", '', 0);
 	find_replace_templatesets("private_read", "#".preg_quote('<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1804"></script>')."#i", '', 0); // Included just in case
 	find_replace_templatesets("private_read", "#".preg_quote('<script type="text/javascript" src="{$mybb->asset_url}/jscripts/report.js?ver=1800"></script>')."#i", '', 0); // Included just in case
