@@ -177,7 +177,8 @@ function reportpm_postbit($post)
 	$query = $db->simple_select("privatemessages", "folder", "pmid='{$pmid}'");
 	$folder = $db->fetch_array($query);
 
-	if($folder['folder'] != 2)
+	$reportable = user_permissions($post['uid']);
+	if($folder['folder'] != 2 && !empty($reportable['canbereported']))
 	{
 		eval("\$post['button_report'] = \"".$templates->get("postbit_report_pm")."\";");
 	}
