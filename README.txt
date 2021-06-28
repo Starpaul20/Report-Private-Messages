@@ -1,6 +1,6 @@
 ## INFORMATION ##
 
-Report Private Messages (1.1) for MyBB 1.8
+Report Private Messages (1.2) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2011
 License: GPL

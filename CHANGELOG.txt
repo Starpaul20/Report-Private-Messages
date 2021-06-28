@@ -1,3 +1,15 @@
+1.2 (June 28th, 2021)
+- Updated javascript links
+- Update reportreasons cache upon activation
+- Removed PHP closing tags
+- Use THIS_SCRIPT for template caching
+- Adding License file
+- Updated cachebreaker
+- Added canbereported permission
+- Added check to see if THIS_SCRIPT is defined
+- Hide report button if user can't be reported
+- Use require_once for template updates
+
 1.1 (October 18th, 2016)
 - Add report reason support (Issue #1)
 - Updated reporting javascript
