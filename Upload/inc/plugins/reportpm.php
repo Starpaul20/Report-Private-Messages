@@ -216,7 +216,7 @@ function reportpm_view()
 	global $db, $mybb, $lang, $templates, $theme;
 	$lang->load("reportpm");
 
-	if($mybb->input['action'] == "viewpm")
+	if($mybb->get_input('action') == "viewpm")
 	{
 		require_once MYBB_ROOT."inc/class_parser.php";
 		$parser = new postParser;
